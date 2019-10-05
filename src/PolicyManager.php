@@ -41,6 +41,8 @@ class PolicyManager implements PolicyManagerContract
 
     /**
      * PolicyManager constructor.
+     *
+     * @param  \Illuminate\Contracts\Foundation\Application  $app
      */
     public function __construct(Application $app)
     {
@@ -96,7 +98,7 @@ class PolicyManager implements PolicyManagerContract
      *
      * @param  string  $class
      *
-     * @return \Arcanedev\LaravelPolicies\Contracts\Policy
+     * @return \Arcanedev\LaravelPolicies\Contracts\Policy|mixed
      */
     public function parsePolicy(string $class): PolicyContract
     {
