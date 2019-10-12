@@ -1,5 +1,5 @@
 {
-    "name":        "arcanesoft/laravel-policies",
+    "name":        "arcanedev/laravel-policies",
     "description": "Policies manager for Laravel",
     "keywords":    ["arcanedev", "arcanesoft", "laravel", "policy", "policies", "acl", "ability", "abilities"],
     "homepage":    "https://github.com/ARCANEDEV/LaravelPolicies",
