@@ -22,14 +22,14 @@ interface PolicyManager
     /**
      * Get the registered policies.
      *
-     * @return \Illuminate\Support\Collection
+     * @return \Arcanedev\LaravelPolicies\Contracts\Policy[]|\Illuminate\Support\Collection
      */
     public function policies(): Collection;
 
     /**
      * Get the registered abilities.
      *
-     * @return \Illuminate\Support\Collection
+     * @return \Arcanedev\LaravelPolicies\Ability[]|\Illuminate\Support\Collection
      */
     public function abilities(): Collection;
 

@@ -2,6 +2,7 @@
 
 namespace Arcanedev\LaravelPolicies\Tests\Fixtures\Policies\Abilities;
 
+use Illuminate\Auth\Access\Response;
 use Illuminate\Foundation\Auth\User;
 
 /**
@@ -10,10 +11,12 @@ use Illuminate\Foundation\Auth\User;
  * @package  Arcanedev\LaravelPolicies\Tests\Fixtures\Policies\Abilities
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
-class AbilityClass
+class DedicatedAbility
 {
-    public function __invoke(?User $user)
+    public function __invoke(?User $user, bool $condition = true)
     {
-        return true;
+        return $condition
+            ? Response::allow('Mi Casa Es Tu Casa')
+            : Response::deny('You Shall Not Pass!!!');
     }
 }

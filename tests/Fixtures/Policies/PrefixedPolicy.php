@@ -3,7 +3,7 @@
 namespace Arcanedev\LaravelPolicies\Tests\Fixtures\Policies;
 
 use Arcanedev\LaravelPolicies\Policy;
-use Arcanedev\LaravelPolicies\Tests\Fixtures\Policies\Abilities\AbilityClass;
+use Arcanedev\LaravelPolicies\Tests\Fixtures\Policies\Abilities\DedicatedAbility;
 use Illuminate\Foundation\Auth\User;
 
 /**
@@ -42,16 +42,18 @@ class PrefixedPolicy extends Policy
     public function abilities(): iterable
     {
         return [
+
             $this->makeAbility('current-class'),
 
             $this->makeAbility('current-class-with-custom-method', 'custom'),
 
-            $this->makeAbility('closure')->callback(function(?User $user) {
-                return true;
+            $this->makeAbility('closure')->callback(function(?User $user, bool $condition = true) {
+                return $condition;
             }),
 
             $this->makeAbility('dedicated-class')
-                 ->setMethod(AbilityClass::class),
+                 ->setMethod(DedicatedAbility::class),
+
         ];
     }
 
@@ -60,13 +62,13 @@ class PrefixedPolicy extends Policy
      | -----------------------------------------------------------------
      */
 
-    public function currentClass(?User $user)
+    public function currentClass(?User $user, bool $condition = true)
     {
-        return true;
+        return $condition;
     }
 
-    public function custom(?User $user)
+    public function custom(?User $user, bool $condition = true)
     {
-        return true;
+        return $condition;
     }
 }

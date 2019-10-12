@@ -22,9 +22,9 @@ interface Policy
     /**
      * Get the ability's key.
      *
-     * @param  string  $key
+     * @param  array|string  $keys
      *
-     * @return string
+     * @return array|string
      */
-    public static function ability(string $key): string;
+    public static function ability($keys);
 }

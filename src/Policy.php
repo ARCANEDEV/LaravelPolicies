@@ -74,13 +74,18 @@ abstract class Policy implements PolicyContract
     /**
      * Get the ability's key.
      *
-     * @param  string  $key
+     * @param  array|string  $keys
      *
-     * @return string
+     * @return array|string
      */
-    public static function ability(string $key): string
+    public static function ability($keys)
     {
-        return static::prefixedKey($key);
+        if (is_string($keys))
+            return static::prefixedKey($keys);
+
+        return array_map(function (string $key) {
+            return static::prefixedKey($key);
+        }, (array) $keys);
     }
 
     /**

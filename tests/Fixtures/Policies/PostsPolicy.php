@@ -3,6 +3,7 @@
 namespace Arcanedev\LaravelPolicies\Tests\Fixtures\Policies;
 
 use Arcanedev\LaravelPolicies\Policy;
+use Illuminate\Foundation\Auth\User;
 
 /**
  * Class     PostsPolicy
@@ -24,28 +25,32 @@ class PostsPolicy extends Policy
      */
     public function abilities(): iterable
     {
+        $this->setMetas([
+            'category' => 'Blog',
+        ]);
+
         return [
-            $this->makeAbility('admin::blog.posts.index', 'index')->setMetas([
+
+            $this->makeAbility('list-posts')->setMetas([
                 'name'        => 'List all the posts',
                 'description' => 'Ability to list all the posts',
             ]),
 
-            $this->makeAbility('admin::blog.posts.create', 'create')->setMetas([
+            $this->makeAbility('create-post')->setMetas([
                 'name'        => 'Create a post',
                 'description' => 'Ability to create a new post',
             ]),
 
-            $this->makeAbility('admin::blog.posts.update', 'update')->setMetas([
+            $this->makeAbility('update-post')->setMetas([
                 'name'        => 'Update a post',
                 'description' => 'Ability to update a post',
             ]),
 
-            $this->makeAbility('admin::blog.posts.delete')->setMetas([
+            $this->makeAbility('delete-post')->setMetas([
                 'name'        => 'Delete a post',
                 'description' => 'Ability to delete a post',
-            ])->callback(function () {
-                return false;
-            }),
+            ]),
+
         ];
     }
 
@@ -54,18 +59,23 @@ class PostsPolicy extends Policy
      | -----------------------------------------------------------------
      */
 
-    public function index()
+    public function listPosts(?User $user, bool $condition = true)
     {
-        return true;
+        return $condition;
     }
 
-    public function create()
+    public function createPost(?User $user, bool $condition = true)
     {
-        return true;
+        return $condition;
     }
 
-    public function update()
+    public function updatePost(?User $user, bool $condition = true)
     {
-        return false;
+        return $condition;
+    }
+
+    public function deletePost(?User $user, bool $condition = true)
+    {
+        return $condition;
     }
 }

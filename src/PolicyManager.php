@@ -59,7 +59,7 @@ class PolicyManager implements PolicyManagerContract
     /**
      * Get the registered policies.
      *
-     * @return \Illuminate\Support\Collection
+     * @return \Arcanedev\LaravelPolicies\Contracts\Policy[]|\Illuminate\Support\Collection
      */
     public function policies(): Collection
     {
@@ -69,7 +69,7 @@ class PolicyManager implements PolicyManagerContract
     /**
      * Get the registered abilities.
      *
-     * @return \Illuminate\Support\Collection
+     * @return \Arcanedev\LaravelPolicies\Ability[]|\Illuminate\Support\Collection
      */
     public function abilities(): Collection
     {
@@ -82,11 +82,13 @@ class PolicyManager implements PolicyManagerContract
      */
 
     /**
-     * @param  array  $classes
+     * Parse policies classes.
+     *
+     * @param  iterable  $classes
      *
      * @return \Illuminate\Support\Collection
      */
-    public function parsePolicies(array $classes): Collection
+    public function parsePolicies(iterable $classes): Collection
     {
         return Collection::make($classes)->transform(function (string $class) {
             return $this->parsePolicy($class);
@@ -110,7 +112,7 @@ class PolicyManager implements PolicyManagerContract
      *
      * @param  string  $class
      *
-     * @return $this
+     * @return \Arcanedev\LaravelPolicies\Contracts\PolicyManager
      */
     public function registerClass(string $class): PolicyManagerContract
     {
@@ -124,37 +126,23 @@ class PolicyManager implements PolicyManagerContract
      *
      * @param  \Arcanedev\LaravelPolicies\Contracts\Policy  $policy
      *
-     * @return $this
+     * @return \Arcanedev\LaravelPolicies\Contracts\PolicyManager
      */
     public function register(PolicyContract $policy): PolicyManagerContract
     {
         $this->policies->put(get_class($policy), $policy);
 
-        return $this->registerAbilities(
-            $this->app->call([$policy, 'abilities'])
-        );
+        foreach ($this->app->call([$policy, 'abilities']) as $ability) {
+            $this->registerAbility($ability);
+        }
+
+        return $this;
     }
 
     /* -----------------------------------------------------------------
      |  Other Methods
      | -----------------------------------------------------------------
      */
-
-    /**
-     * Register the abilities into the gate access.
-     *
-     * @param  \Arcanedev\LaravelPolicies\Ability[]|array  $abilities
-     *
-     * @return $this
-     */
-    protected function registerAbilities(iterable $abilities)
-    {
-        foreach ($abilities as $ability) {
-            $this->registerAbility($ability);
-        }
-
-        return $this;
-    }
 
     /**
      * Register the ability object.
@@ -176,7 +164,7 @@ class PolicyManager implements PolicyManagerContract
      *
      * @return \Illuminate\Contracts\Auth\Access\Gate|mixed
      */
-    protected function gate(): Gate
+    private function gate(): Gate
     {
         return $this->app->make(Gate::class);
     }

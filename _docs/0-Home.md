@@ -1,4 +1,4 @@
-# 0. LaravelHtml
+# 0. Laravel Policies
 
 ## Table of contents
 
