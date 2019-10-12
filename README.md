@@ -50,7 +50,7 @@ If you discover any security related issues, please email arcanedev.maroc@gmail.
 [badge_build]:        https://img.shields.io/travis/ARCANEDEV/LaravelPolicies.svg?style=flat-square
 [badge_coverage]:     https://img.shields.io/scrutinizer/coverage/g/ARCANEDEV/LaravelPolicies.svg?style=flat-square
 [badge_quality]:      https://img.shields.io/scrutinizer/g/ARCANEDEV/LaravelPolicies.svg?style=flat-square
-[badge_insight]:      https://img.shields.io/sensiolabs/i/[id].svg?style=flat-square
+[badge_insight]:      https://img.shields.io/sensiolabs/i/ee623172-802f-4775-b48b-122df1571b1b.svg?style=flat-square
 [badge_issues]:       https://img.shields.io/github/issues/ARCANEDEV/LaravelPolicies.svg?style=flat-square
 [badge_package]:      https://img.shields.io/badge/package-arcanedev/laravel--html-blue.svg?style=flat-square
 [badge_release]:      https://img.shields.io/packagist/v/arcanedev/laravel-policies.svg?style=flat-square
@@ -63,4 +63,4 @@ If you discover any security related issues, please email arcanedev.maroc@gmail.
 [link-packagist]:     https://packagist.org/packages/arcanedev/laravel-policies
 [link-travis]:        https://travis-ci.org/ARCANEDEV/LaravelPolicies
 [link-scrutinizer]:   https://scrutinizer-ci.com/g/ARCANEDEV/LaravelPolicies/?branch=master
-[link-insight]:       https://insight.sensiolabs.com/projects/[id]
+[link-insight]:       https://insight.sensiolabs.com/projects/ee623172-802f-4775-b48b-122df1571b1b
