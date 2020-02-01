@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Arcanedev\LaravelPolicies\Tests;
 
 use Orchestra\Testbench\TestCase as BaseTestCase;
@@ -24,7 +26,7 @@ abstract class TestCase extends BaseTestCase
      *
      * @return array
      */
-    protected function getPackageProviders($app)
+    protected function getPackageProviders($app): array
     {
         return [
             \Arcanedev\LaravelPolicies\PoliciesServiceProvider::class

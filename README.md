@@ -1,6 +1,6 @@
 # Laravel Policies [![Packagist License][badge_license]](LICENSE.md) [![For Laravel][badge_laravel]][link-github-repo]
 
-[![Travis Status][badge_build]][link-travis]
+[![Github Workflow Status][badge_build]][link-github-status]
 [![Coverage Status][badge_coverage]][link-scrutinizer]
 [![Scrutinizer Code Quality][badge_quality]][link-scrutinizer]
 [![SensioLabs Insight][badge_insight]][link-insight]
@@ -21,7 +21,7 @@ This package allows to create & manage policies/abilities in a modular way.
   * Well tested with maximum code quality.
   * Laravel `6.x` is supported.
   * Made with :heart: &amp; :coffee:.
-  
+
 ## Table of contents
 
   1. [Installation and Setup](_docs/1-Installation-and-Setup.md)
@@ -47,7 +47,7 @@ If you discover any security related issues, please email arcanedev.maroc@gmail.
 
 [badge_laravel]:      https://img.shields.io/badge/Laravel-6.x-orange.svg?style=flat-square
 [badge_license]:      https://img.shields.io/packagist/l/arcanedev/laravel-policies.svg?style=flat-square
-[badge_build]:        https://img.shields.io/travis/ARCANEDEV/LaravelPolicies.svg?style=flat-square
+[badge_build]:        https://img.shields.io/github/workflow/status/ARCANEDEV/LaravelPolicies/run-tests?style=flat-square
 [badge_coverage]:     https://img.shields.io/scrutinizer/coverage/g/ARCANEDEV/LaravelPolicies.svg?style=flat-square
 [badge_quality]:      https://img.shields.io/scrutinizer/g/ARCANEDEV/LaravelPolicies.svg?style=flat-square
 [badge_insight]:      https://img.shields.io/sensiolabs/i/ee623172-802f-4775-b48b-122df1571b1b.svg?style=flat-square
@@ -58,9 +58,9 @@ If you discover any security related issues, please email arcanedev.maroc@gmail.
 
 [link-author]:        https://github.com/arcanedev-maroc
 [link-github-repo]:   https://github.com/ARCANEDEV/LaravelPolicies
+[link-github-status]: https://github.com/ARCANEDEV/LaravelPolicies/actions
 [link-github-issues]: https://github.com/ARCANEDEV/LaravelPolicies/issues
 [link-contributors]:  https://github.com/ARCANEDEV/LaravelPolicies/graphs/contributors
 [link-packagist]:     https://packagist.org/packages/arcanedev/laravel-policies
-[link-travis]:        https://travis-ci.org/ARCANEDEV/LaravelPolicies
 [link-scrutinizer]:   https://scrutinizer-ci.com/g/ARCANEDEV/LaravelPolicies/?branch=master
 [link-insight]:       https://insight.sensiolabs.com/projects/ee623172-802f-4775-b48b-122df1571b1b

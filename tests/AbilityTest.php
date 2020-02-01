@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Arcanedev\LaravelPolicies\Tests;
 
 use Arcanedev\LaravelPolicies\Ability;
@@ -19,16 +21,24 @@ class AbilityTest extends TestCase
      */
 
     /** @test */
-    public function it_can_be_instantiated()
+    public function it_can_be_instantiated(): void
     {
         $ability = new Ability('posts.create', 'create');
 
+        $expectations = [
+            \Arcanedev\LaravelPolicies\Contracts\Ability::class,
+            \Arcanedev\LaravelPolicies\Ability::class,
+        ];
+
+        foreach ($expectations as $expected) {
+            static::assertInstanceOf($expected, $ability);
+        }
         static::assertSame('posts.create', $ability->key());
         static::assertSame('create', $ability->method());
     }
 
     /** @test */
-    public function it_can_make()
+    public function it_can_make(): void
     {
         $ability = Ability::make('posts.create', 'create');
 
@@ -37,7 +47,7 @@ class AbilityTest extends TestCase
     }
 
     /** @test */
-    public function it_can_create_with_closure_method()
+    public function it_can_create_with_closure_method(): void
     {
         $ability = Ability::make('posts.create', function (User $user) {
             return true;
@@ -49,7 +59,7 @@ class AbilityTest extends TestCase
     }
 
     /** @test */
-    public function it_can_set_and_get_metas()
+    public function it_can_set_and_get_metas(): void
     {
         $metas = [
             'name'        => 'List posts',
@@ -62,7 +72,7 @@ class AbilityTest extends TestCase
     }
 
     /** @test */
-    public function it_can_set_and_get_single_meta()
+    public function it_can_set_and_get_single_meta(): void
     {
         $name        = 'List posts';
         $description = 'Ability to list all the posts';
@@ -76,7 +86,7 @@ class AbilityTest extends TestCase
     }
 
     /** @test */
-    public function it_can_get_meta_with_default_value()
+    public function it_can_get_meta_with_default_value(): void
     {
         $ability = Ability::make('posts.list', 'index');
 
@@ -85,7 +95,7 @@ class AbilityTest extends TestCase
     }
 
     /** @test */
-    public function it_can_set_and_get_nested_metas()
+    public function it_can_set_and_get_nested_metas(): void
     {
         $ability = Ability::make('posts.update', 'update')->setMeta('roles', [
             'administrator' => true,
@@ -106,7 +116,7 @@ class AbilityTest extends TestCase
     }
 
     /** @test */
-    public function it_can_convert_toArray()
+    public function it_can_convert_toArray(): void
     {
         $metas = [
             'name'        => 'List posts',
@@ -126,7 +136,7 @@ class AbilityTest extends TestCase
     }
 
     /** @test */
-    public function it_can_convert_to_json()
+    public function it_can_convert_to_json(): void
     {
         $metas = [
             'name'        => 'List posts',

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Arcanedev\LaravelPolicies;
 
-use Arcanedev\Support\PackageServiceProvider;
+use Arcanedev\Support\Providers\PackageServiceProvider;
 use Illuminate\Contracts\Support\DeferrableProvider;
 
 /**

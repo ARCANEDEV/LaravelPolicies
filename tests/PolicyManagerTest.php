@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Arcanedev\LaravelPolicies\Tests;
 
 use Illuminate\Support\Facades\Gate;
@@ -45,7 +47,7 @@ class PolicyManagerTest extends TestCase
      */
 
     /** @test */
-    public function it_can_be_instantiated()
+    public function it_can_be_instantiated(): void
     {
         $expectations = [
             \Arcanedev\LaravelPolicies\Contracts\PolicyManager::class,
@@ -64,7 +66,7 @@ class PolicyManagerTest extends TestCase
     }
 
     /** @test */
-    public function it_can_parse_policy_class()
+    public function it_can_parse_policy_class(): void
     {
         $classes = [
             Fixtures\Policies\PrefixedPolicy::class,
@@ -81,7 +83,7 @@ class PolicyManagerTest extends TestCase
     }
 
     /** @test */
-    public function it_can_parse_multiple_policy_classes()
+    public function it_can_parse_multiple_policy_classes(): void
     {
         $policies = $this->manager->parsePolicies([
             Fixtures\Policies\PrefixedPolicy::class,
@@ -97,7 +99,7 @@ class PolicyManagerTest extends TestCase
     }
 
     /** @test */
-    public function it_can_register_policy_class()
+    public function it_can_register_policy_class(): void
     {
         static::assertCount(0, Gate::abilities());
 
@@ -113,7 +115,7 @@ class PolicyManagerTest extends TestCase
     }
 
     /** @test */
-    public function it_can_register_multiple_policy_classes()
+    public function it_can_register_multiple_policy_classes(): void
     {
         static::assertCount(0, Gate::abilities());
 
@@ -130,7 +132,7 @@ class PolicyManagerTest extends TestCase
     }
 
     /** @test */
-    public function it_can_register_policy_instance()
+    public function it_can_register_policy_instance(): void
     {
         static::assertCount(0, Gate::abilities());
 
@@ -149,7 +151,7 @@ class PolicyManagerTest extends TestCase
     }
 
     /** @test */
-    public function it_can_check_authorizations()
+    public function it_can_check_authorizations(): void
     {
         $this->manager->registerClass(Fixtures\Policies\PostsPolicy::class);
         $this->manager->registerClass(Fixtures\Policies\PrefixedPolicy::class);
@@ -166,7 +168,7 @@ class PolicyManagerTest extends TestCase
     }
 
     /** @test */
-    public function it_can_inspect_authorization()
+    public function it_can_inspect_authorization(): void
     {
         $this->manager->registerClass(Fixtures\Policies\PrefixedPolicy::class);
 

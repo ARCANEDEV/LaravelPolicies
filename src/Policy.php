@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Arcanedev\LaravelPolicies;
 
+use Arcanedev\LaravelPolicies\Contracts\Ability as AbilityContract;
 use Arcanedev\LaravelPolicies\Contracts\Policy as PolicyContract;
 use Illuminate\Support\Str;
 
@@ -94,9 +95,9 @@ abstract class Policy implements PolicyContract
      * @param  string       $key
      * @param  string|null  $method
      *
-     * @return \Arcanedev\LaravelPolicies\Ability
+     * @return \Arcanedev\LaravelPolicies\Contracts\Ability
      */
-    protected function makeAbility(string $key, $method = null): Ability
+    protected function makeAbility(string $key, $method = null): AbilityContract
     {
         return Ability::make(
             static::prefixedKey($key),
