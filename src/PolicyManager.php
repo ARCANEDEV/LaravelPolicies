@@ -4,13 +4,12 @@ declare(strict_types=1);
 
 namespace Arcanedev\LaravelPolicies;
 
-use Arcanedev\LaravelPolicies\Contracts\{
-    Policy as PolicyContract,
-    PolicyManager as PolicyManagerContract
-};
+use Arcanedev\LaravelPolicies\Contracts\Ability as AbilityContract;
+use Arcanedev\LaravelPolicies\Contracts\Policy as PolicyContract;
+use Arcanedev\LaravelPolicies\Contracts\PolicyManager as PolicyManagerContract;
+use Illuminate\Contracts\Auth\Access\Gate;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\Collection;
-use Illuminate\Contracts\Auth\Access\Gate;
 
 /**
  * Class     PolicyManager
@@ -147,11 +146,11 @@ class PolicyManager implements PolicyManagerContract
     /**
      * Register the ability object.
      *
-     * @param  \Arcanedev\LaravelPolicies\Ability  $ability
+     * @param  \Arcanedev\LaravelPolicies\Contracts\Ability  $ability
      *
      * @return $this
      */
-    protected function registerAbility(Ability $ability)
+    protected function registerAbility(AbilityContract $ability)
     {
         $this->abilities->put($ability->key(), $ability);
         $this->gate()->define($ability->key(), $ability->method());

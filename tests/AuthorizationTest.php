@@ -1,9 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Arcanedev\LaravelPolicies\Tests;
 
 use Arcanedev\LaravelPolicies\Ability;
-use Arcanedev\LaravelPolicies\Tests\Fixtures\Policies\PostsPolicy;
 use Arcanedev\LaravelPolicies\Tests\Fixtures\Policies\PrefixedPolicy;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Gate;
@@ -22,7 +23,7 @@ class AuthorizationTest extends TestCase
      */
 
     /** @test */
-    public function it_can_define()
+    public function it_can_define(): void
     {
         static::assertEmpty(Gate::abilities());
 
@@ -54,7 +55,7 @@ class AuthorizationTest extends TestCase
     }
 
     /** @test */
-    public function it_can_define_with_prefixed_policy_class()
+    public function it_can_define_with_prefixed_policy_class(): void
     {
         $abilities = (new PrefixedPolicy)->abilities();
 

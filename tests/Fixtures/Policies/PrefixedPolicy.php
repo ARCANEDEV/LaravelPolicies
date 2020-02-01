@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Arcanedev\LaravelPolicies\Tests\Fixtures\Policies;
 
 use Arcanedev\LaravelPolicies\Policy;

@@ -4,10 +4,9 @@ declare(strict_types=1);
 
 namespace Arcanedev\LaravelPolicies;
 
-use Illuminate\Contracts\Support\{Arrayable, Jsonable};
+use Arcanedev\LaravelPolicies\Contracts\Ability as AbilityContract;
 use Closure;
 use Illuminate\Support\Arr;
-use JsonSerializable;
 
 /**
  * Class     Ability
@@ -15,7 +14,7 @@ use JsonSerializable;
  * @package  Arcanedev\LaravelPolicies
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
-class Ability implements Arrayable, JsonSerializable, Jsonable
+class Ability implements AbilityContract
 {
     /* -----------------------------------------------------------------
      |  Properties
@@ -93,7 +92,7 @@ class Ability implements Arrayable, JsonSerializable, Jsonable
     /**
      * Get the ability's method.
      *
-     * @return string|Closure
+     * @return \Closure|string
      */
     public function method()
     {
@@ -115,7 +114,7 @@ class Ability implements Arrayable, JsonSerializable, Jsonable
     /**
      * Set the ability's method.
      *
-     * @param  string|\Closure  $method
+     * @param  \Closure|string  $method
      *
      * @return self
      */

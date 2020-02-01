@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Arcanedev\LaravelPolicies\Tests;
 
 use Arcanedev\LaravelPolicies\Tests\Fixtures\Policies\PostsPolicy;
@@ -19,7 +21,7 @@ class PolicyTest extends TestCase
      */
 
     /** @test */
-    public function it_can_be_instantiated()
+    public function it_can_be_instantiated(): void
     {
         $policy = new PostsPolicy;
 
@@ -34,7 +36,7 @@ class PolicyTest extends TestCase
     }
 
     /** @test */
-    public function it_can_get_abilities()
+    public function it_can_get_abilities(): void
     {
         $abilities = (new PostsPolicy)->abilities();
 
@@ -54,7 +56,7 @@ class PolicyTest extends TestCase
     }
 
     /** @test */
-    public function it_can_get_single_ability_key()
+    public function it_can_get_single_ability_key(): void
     {
         $expectations = [
             'list-posts'    => PostsPolicy::ability('list-posts'),
@@ -67,7 +69,7 @@ class PolicyTest extends TestCase
     }
 
     /** @test */
-    public function it_can_get_multiple_ability_keys()
+    public function it_can_get_multiple_ability_keys(): void
     {
         static::assertEquals(
             ['list-posts', 'create-posts'],
