@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Arcanedev\LaravelPolicies;
 
+use Arcanedev\LaravelPolicies\Contracts\PolicyManager as PolicyManagerContract;
 use Arcanedev\Support\Providers\PackageServiceProvider;
 use Illuminate\Contracts\Support\DeferrableProvider;
 
@@ -39,7 +40,7 @@ class PoliciesServiceProvider extends PackageServiceProvider implements Deferrab
     {
         parent::register();
 
-        $this->singleton(Contracts\PolicyManager::class, PolicyManager::class);
+        $this->singleton(PolicyManagerContract::class, PolicyManager::class);
     }
 
     /**
@@ -50,7 +51,7 @@ class PoliciesServiceProvider extends PackageServiceProvider implements Deferrab
     public function provides(): array
     {
         return [
-            Contracts\PolicyManager::class,
+            PolicyManagerContract::class,
         ];
     }
 }
