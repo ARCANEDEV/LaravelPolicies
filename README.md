@@ -19,7 +19,7 @@ This package allows to create & manage policies/abilities in a modular way.
   * Easy setup &amp; configuration.
   * Well documented &amp; IDE Friendly.
   * Well tested with maximum code quality.
-  * Laravel `6.x` is supported.
+  * Laravel `6.x` to `7.x` are supported.
   * Made with :heart: &amp; :coffee:.
 
 ## Table of contents
@@ -45,7 +45,7 @@ If you discover any security related issues, please email arcanedev.maroc@gmail.
 - [ARCANEDEV][link-author]
 - [All Contributors][link-contributors]
 
-[badge_laravel]:      https://img.shields.io/badge/Laravel-6.x-orange.svg?style=flat-square
+[badge_laravel]:      https://img.shields.io/badge/Laravel-6.x%20to%207.x-orange.svg?style=flat-square
 [badge_license]:      https://img.shields.io/packagist/l/arcanedev/laravel-policies.svg?style=flat-square
 [badge_build]:        https://img.shields.io/github/workflow/status/ARCANEDEV/LaravelPolicies/run-tests?style=flat-square
 [badge_coverage]:     https://img.shields.io/scrutinizer/coverage/g/ARCANEDEV/LaravelPolicies.svg?style=flat-square
