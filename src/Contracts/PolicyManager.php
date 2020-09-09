@@ -7,10 +7,9 @@ namespace Arcanedev\LaravelPolicies\Contracts;
 use Illuminate\Support\Collection;
 
 /**
- * Interface     PolicyManager
+ * Interface  PolicyManager
  *
- * @package  Arcanedev\LaravelPolicies\Contracts
- * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
+ * @author    ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 interface PolicyManager
 {

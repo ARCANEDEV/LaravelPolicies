@@ -11,7 +11,6 @@ use Illuminate\Support\Arr;
 /**
  * Class     Ability
  *
- * @package  Arcanedev\LaravelPolicies
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 class Ability implements AbilityContract

@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Gate;
 /**
  * Class     AuthorizationTest
  *
- * @package  Arcanedev\LaravelPolicies\Tests
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 class AuthorizationTest extends TestCase

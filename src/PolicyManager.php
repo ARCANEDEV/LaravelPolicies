@@ -14,7 +14,6 @@ use Illuminate\Support\Collection;
 /**
  * Class     PolicyManager
  *
- * @package  Arcanedev\LaravelPolicies
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 class PolicyManager implements PolicyManagerContract

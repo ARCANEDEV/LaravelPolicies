@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Arcanedev\LaravelPolicies\Tests;
 
 use Arcanedev\LaravelPolicies\PoliciesServiceProvider;
@@ -7,7 +9,6 @@ use Arcanedev\LaravelPolicies\PoliciesServiceProvider;
 /**
  * Class     PoliciesServiceProviderTest
  *
- * @package  Arcanedev\LaravelPolicies\Tests
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 class PoliciesServiceProviderTest extends TestCase

@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Gate;
 /**
  * Class     PolicyManagerTest
  *
- * @package  Arcanedev\LaravelPolicies\Tests
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 class PolicyManagerTest extends TestCase

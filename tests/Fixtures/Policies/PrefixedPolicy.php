@@ -11,7 +11,6 @@ use Illuminate\Foundation\Auth\User;
 /**
  * Class     PrefixedPolicy
  *
- * @package  Arcanedev\LaravelPolicies\Tests\Fixtures\Policies
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 class PrefixedPolicy extends Policy

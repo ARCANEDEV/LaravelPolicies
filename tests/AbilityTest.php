@@ -10,7 +10,6 @@ use Illuminate\Foundation\Auth\User;
 /**
  * Class     AbilityTest
  *
- * @package  Arcanedev\LaravelPolicies\Tests
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 class AbilityTest extends TestCase

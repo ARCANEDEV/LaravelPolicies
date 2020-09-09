@@ -10,7 +10,6 @@ use Illuminate\Foundation\Auth\User;
 /**
  * Class     PostsPolicy
  *
- * @package  Arcanedev\LaravelPolicies\Tests\Fixtures\Policies
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 class PostsPolicy extends Policy
