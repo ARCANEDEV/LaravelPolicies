@@ -10,7 +10,6 @@ use Arcanedev\LaravelPolicies\Tests\Fixtures\Policies\PrefixedPolicy;
 /**
  * Class     PolicyTest
  *
- * @package  Arcanedev\LaravelPolicies\Tests
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 class PolicyTest extends TestCase

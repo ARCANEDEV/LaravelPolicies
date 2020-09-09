@@ -11,7 +11,6 @@ use Illuminate\Contracts\Support\DeferrableProvider;
 /**
  * Class     PoliciesServiceProvider
  *
- * @package  Arcanedev\LaravelPolicies
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 class PoliciesServiceProvider extends PackageServiceProvider implements DeferrableProvider

@@ -11,7 +11,6 @@ use Illuminate\Support\Str;
 /**
  * Class     Policy
  *
- * @package  Arcanedev\LaravelPolicies
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 abstract class Policy implements PolicyContract

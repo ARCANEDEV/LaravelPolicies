@@ -8,9 +8,8 @@ use Illuminate\Auth\Access\Response;
 use Illuminate\Foundation\Auth\User;
 
 /**
- * Class     AbilityClass
+ * Class     DedicatedAbility
  *
- * @package  Arcanedev\LaravelPolicies\Tests\Fixtures\Policies\Abilities
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 class DedicatedAbility

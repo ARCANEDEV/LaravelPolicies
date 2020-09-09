@@ -9,10 +9,9 @@ use Closure;
 use JsonSerializable;
 
 /**
- * Interface     Ability
+ * Interface  Ability
  *
- * @package  Arcanedev\LaravelPolicies\Contracts
- * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
+ * @author    ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 interface Ability extends Arrayable, JsonSerializable, Jsonable
 {

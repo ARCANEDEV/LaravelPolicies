@@ -5,12 +5,9 @@ declare(strict_types=1);
 namespace Arcanedev\LaravelPolicies\Contracts;
 
 /**
- * Class     Policy
+ * Interface  Policy
  *
- * @package  Arcanedev\LaravelPolicies\Contracts
- * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
- *
- * @method  \Arcanedev\LaravelPolicies\Ability[]|iterable  abilities()
+ * @author    ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 interface Policy
 {
