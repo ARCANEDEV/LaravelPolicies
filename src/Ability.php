@@ -99,6 +99,38 @@ class Ability implements AbilityContract
     }
 
     /**
+     * Get the ability's method name.
+     *
+     * @return string|null
+     */
+    public function methodName()
+    {
+        if ($this->isClosure())
+            return null;
+
+        return last(explode('@', $this->method()));
+    }
+
+    /**
+     * Get the ability's class name.
+     *
+     * @param  bool  $fqn
+     *
+     * @return  string|null
+     */
+    public function className(bool $fqn = true)
+    {
+        if ($this->isClosure())
+            return null;
+
+        $class = head(explode('@', $this->method()));
+
+        return $fqn
+            ? $class
+            : class_basename($class);
+    }
+
+    /**
      * Set the callback as method.
      *
      * @param  \Closure  $callback

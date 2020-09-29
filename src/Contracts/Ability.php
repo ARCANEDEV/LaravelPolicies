@@ -44,6 +44,22 @@ interface Ability extends Arrayable, JsonSerializable, Jsonable
     public function method();
 
     /**
+     * Get the ability's method name.
+     *
+     * @return string|null
+     */
+    public function methodName();
+
+    /**
+     * Get the ability's class name.
+     *
+     * @param  bool  $fqn
+     *
+     * @return  string|null
+     */
+    public function className(bool $fqn = true);
+
+    /**
      * Set the callback as method.
      *
      * @param  \Closure  $callback
