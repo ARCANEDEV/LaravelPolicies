@@ -163,4 +163,23 @@ class AbilityTest extends TestCase
         static::assertJsonStringEqualsJsonString($expectedJson, json_encode($ability));
         static::assertJsonStringEqualsJsonString($expectedJson, (string) $ability->toJson());
     }
+
+    /** @test */
+    public function it_can_get_method_and_class_names_separately(): void
+    {
+        $ability = Ability::make('posts.list', 'Arcanedev\Package\Policies\PostsPolicy@index');
+
+        static::assertSame('index', $ability->methodName());
+        static::assertSame('Arcanedev\Package\Policies\PostsPolicy', $ability->className());
+        static::assertSame('PostsPolicy', $ability->className(false));
+    }
+
+    /** @test */
+    public function it_cannot_get_method_and_class_names_when_using_closure(): void
+    {
+        $ability = Ability::make('posts.list', function () {});
+
+        static::assertNull($ability->methodName());
+        static::assertNull($ability->className());
+    }
 }
